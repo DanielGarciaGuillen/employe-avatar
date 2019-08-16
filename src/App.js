@@ -1,26 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+
+  state ={ profile : "", loading: true}
+
+  componentDidMount(){    
+   this.fetchGifs()
+  }
+
+  fetchGifs = () => {
+    fetch("https://randomuser.me/api/")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(myJson =>  {
+      const {results} = myJson;
+      console.log(results)
+      const {name, email, cell, picture: {medium}} = results[0]
+      this.setState({loading: false, name, email, cell })
+    })
+     
+  }
+
+
+  render(){
+
+    const { profile, loading } = this.state; 
+    console.log( this.state)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+    {!loading && (
+       <div>
+    
+    </div>
+    )}
+     
     </div>
   );
+}
 }
 
 export default App;
