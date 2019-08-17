@@ -65,6 +65,15 @@ const ContactInfo = styled.div`
   font-size: 17px;
 `;
 
+const ContactItem = styled.div`
+  display: flex;
+  font-weight: 500;
+`;
+
+const InfoKey = styled.div`
+  width: 65px;
+`;
+
 const Card = ({ profile }) => {
   console.log(profile);
   const {
@@ -84,15 +93,24 @@ const Card = ({ profile }) => {
       </EmployeInfo>
 
       <ContactInfo>
-        <div>
-          <b>Phone:</b> {phoneNumber}
-        </div>
-        <div>
-          <b>Fax:</b> {fax}
-        </div>
-        <div>
-          <b>Email:</b> {email}
-        </div>
+        <ContactItem>
+          <InfoKey>
+            <b>Phone:</b>
+          </InfoKey>
+          <div>{phoneNumber}</div>
+        </ContactItem>
+        <ContactItem>
+          <InfoKey>
+            <b>Fax:</b>
+          </InfoKey>
+          {fax}
+        </ContactItem>
+        <ContactItem>
+          <InfoKey>
+            <b>Email:</b>
+          </InfoKey>{" "}
+          {email}
+        </ContactItem>
       </ContactInfo>
     </CardDiv>
   );
