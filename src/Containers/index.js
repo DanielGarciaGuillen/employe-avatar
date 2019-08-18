@@ -4,8 +4,6 @@ import { recProfiles, reqProfiles } from "../profileReducer";
 import { bindActionCreators } from "redux";
 
 function mapStateToProps({ profiles: { profile, loading } }) {
-  console.log(profile);
-  debugger;
   return { profile, loading };
 }
 

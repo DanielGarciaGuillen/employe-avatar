@@ -64,7 +64,6 @@ const InfoKey = styled.div`
 `;
 
 const Card = ({ profile }) => {
-  debugger;
   const { email, name: { fullName }, title } = profile;
   return (
     <CardDiv id="signature">

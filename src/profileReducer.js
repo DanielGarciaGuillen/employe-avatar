@@ -24,8 +24,6 @@ export default function jobListingsReducer(state = INITIAL_STATE, action) {
     case REC_PROFILES: {
       const { profiles } = action.payload;
       const selectedProfile = sample(profiles);
-      console.log(selectedProfile);
-      debugger;
       return {
         ...state,
         profiles,

@@ -57,9 +57,6 @@ class App extends Component {
 
   render() {
     const { loading, profile } = this.props;
-    console.log(isEmpty(profile));
-
-    debugger;
     return (
       <AppDiv>
         {loading && "Loading"}
