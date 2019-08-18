@@ -39,6 +39,7 @@ class App extends Component {
 
   fetchProfiles = () => {
     const { recProfiles } = this.props;
+
     clearbit.Prospector.search({
       domain: "www.twitter.com",
       role: "marketing"
