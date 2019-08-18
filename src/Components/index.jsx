@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { PDFExport } from "@progress/kendo-react-pdf";
 import styled from "styled-components";
 import { isEmpty } from "lodash";
-var clearbit = require("clearbit")("sk_01bfcfe5af53f2bb4436cafbf35341b9");
+var clearbit = require("clearbit")(`${process.env.REACT_APP_API_KEY}`);
 
 const AppDiv = styled.div`
   background: #e1e1e0;
