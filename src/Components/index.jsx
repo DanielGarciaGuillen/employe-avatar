@@ -23,6 +23,7 @@ const DownloadButton = styled.button`
   border-radius: 6px;
   padding: 5px;
   font-size: 18px;
+  background: white;
   text-transform: uppercase;
   :hover {
     background: #1a1d26;
@@ -42,7 +43,8 @@ class App extends Component {
 
     clearbit.Prospector.search({
       domain: "www.twitter.com",
-      role: "marketing"
+      role: "marketing",
+      stream: true
     })
       .then(people => {
         recProfiles({ profiles: people.results });
