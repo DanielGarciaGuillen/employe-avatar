@@ -12,6 +12,7 @@ const AppDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: grey;
 `;
 
 const DownloadDiv = styled.div`
@@ -49,7 +50,7 @@ class App extends Component {
       .then(people => {
         recProfiles({ profiles: people.results });
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.error(err);
       });
   };
